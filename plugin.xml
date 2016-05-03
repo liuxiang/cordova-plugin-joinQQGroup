@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.wosai.joinQQGroup"
+        version="1.0.0">
+  <name>Cordova Plugin JoinQQGroup</name>
+  <author>liu xiang</author>
+  <license>Apache 2.0 License</license>
+
+  <js-module src="www/JoinQQGroup.js" name="JoinQQGroup">
+    <clobbers target="JoinQQGroup"/>
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <source-file src="src/android/JoinQQGroup.java" target-dir="src/com/wosai/joinQQGroup"/>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="JoinQQGroup">
+        <param name="android-package" value="com.wosai.joinQQGroup.JoinQQGroup"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    </config-file>
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="JoinQQGroup">
+        <param name="ios-package" value="JoinQQGroup" onload="true"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/JoinQQGroup.h"/>
+    <source-file src="src/ios/JoinQQGroup.m"/>
+  </platform>
+
+</plugin>
