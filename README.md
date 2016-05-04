@@ -13,3 +13,17 @@ JoinQQGroup.open({uid:'498644453',key:'0160929211e558ce77c3c044c510920d80c91088c
 window.open('http://shang.qq.com/wpa/qunwpa?idkey=c9fe8f010659e42d1592998108c4f8dbb54ffa265ae537ac729f32710bf6ef4b', "_system");
 window.open("http://jq.qq.com/?_wv=1027&k=2GxZBsK", "_system");
 ```
+
+# 示例
+```
+if (app.isWeb) {
+  window.location.href = "http://jq.qq.com/?_wv=1027&k=2GxZBsK";
+} else {
+  // window.open("http://jq.qq.com/?_wv=1027&k=2GxZBsK", "_system");// 依赖插件 cordova-plugin-inappbrowser
+  if(app.isAndroid){
+    JoinQQGroup.open({key:joinQQGroupJson.android.key});
+  }else{
+    JoinQQGroup.open({uid:joinQQGroupJson.ios.uid,key:joinQQGroupJson.ios.key});
+  }
+}
+```
