@@ -16,7 +16,7 @@ public class JoinQQGroup extends CordovaPlugin {
 		boolean result = false;
 		if ("open".equalsIgnoreCase(action)) {
 		  JSONObject jsonObj = args.getJSONObject(0);
-      String uin = jsonObj.getString("uin");
+      // String uin = jsonObj.getString("uin");// 无用参数，如果前端未传入还会导致json解析错误。固注释
       String key = jsonObj.getString("key");
       result = joinQQGroup(key);
 		}
