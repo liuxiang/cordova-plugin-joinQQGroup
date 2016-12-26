@@ -1,5 +1,5 @@
 # 安装
-cordova plugin add https://github.com/liuxiang/cordova-plugin-wosai-joinQQGroup.git
+cordova plugin add https://github.com/liuxiang/cordova-plugin-joinQQGroup.git
 
 # 使用
 * 获取群信息key 登录网页 http://qun.qq.com/join.html
